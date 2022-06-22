@@ -24,6 +24,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AlbumComponent
   ],
   imports: [
+    FontAwesomeModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -32,8 +33,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       {path: 'album', component:AlbumComponent},
       {path: 'video', component:VideoComponent},
       {path: 'sign-up', component:SignUpComponent},
-    ]),
-    FontAwesomeModule
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
