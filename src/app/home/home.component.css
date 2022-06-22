@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Patua+One&family=Yeseva+One&display=swap');
+.container-fluid {
+    background-color: #7d8597;
+    color: white;
+    height: 100vh;
+}
+
+.banner {
+    background-image: url('../../../src/assets/meteor.jpg');
+    height: 100%;
+    background-position: center top;
+    background-size: cover;
+}
+
+.content {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    right: 20%;
+}
+
+.content h1 {
+    color: #fff;
+    font-weight: 400;
+    font-size: 48px;
+    font-family: 'Patua One', cursive;
+}

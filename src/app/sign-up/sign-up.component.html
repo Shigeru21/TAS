@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-6 offset-3">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Sign Up</h1>
+                    <h6>Please fill in this form to create an account.</h6>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" formControlName="email" id="email" placeholder="Enter Email">
+                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                            <div *ngIf="f['email'].errors['required']">Email is required</div>
+                            <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" formControlName="password" id="password" placeholder="Enter Password">
+                        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                            <div *ngIf="f['password'].errors['required']">Password is required</div>
+                            <div *ngIf="f['password'].errors['minLength']">
+                                Password must be at least 6 characters
+                            </div>
+                            <div *ngIf="f['password'].errors['pattern']">
+                                Password must contains special characters, contain at least one uppercase and one number
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Repeat Password</label>
+                        <input type="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['repeatPassword'].errors }" formControlName="repeatPassword" id="repeat-password" placeholder="Repeat Password">
+                        <div *ngIf="submitted && f['repeatPassword'].errors" class="invalid-feedback">
+                            <div *ngIf="f['repeatPassword'].errors['required']">
+                                Repeat Password is required
+                            </div>
+                            <div *ngIf="f['repeatPassword'].errors['matching']">
+                                Repeat Password don't match
+                            </div>
+                        </div>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" formControlName="check" [ngClass]="{ 'is-invalid': submitted && f['check'].errors }">
+                        <label for="check">Remember me</label>
+                        <div *ngIf="submitted && f['check'].errors" class="invalid-feedback">
+                            Check is required
+                        </div>
+                    </div>
+                    <h6>By creating an account you agree to our <a href="#">Terms & Privacy</a></h6>
+                    <div class="button">
+                        <button class="btn-cancle">Cancle</button>
+                        <button class="btn-sign">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

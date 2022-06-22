@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Patua+One&family=Yeseva+One&display=swap');
+.navbar {
+    background-color: darksalmon;
+}
+
+.navbar-brand {
+    font-family: 'Patua One', cursive;
+    font-weight: 300;
+    color: azure;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.nav-link {
+    font-family: 'Patua One', cursive;
+    font-weight: 300;
+    color: azure;
+    font-size: 20px;
+}

@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Patua+One&family=Yeseva+One&display=swap');
+* {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    box-sizing: border-box;
+    font-family: 'Patua One', cursive;
+}
