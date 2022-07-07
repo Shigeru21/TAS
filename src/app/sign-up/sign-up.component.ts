@@ -1,6 +1,8 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import Validation from '../validation/validation';
+import Validation   from '../validation/validation'
+import { UsersDataService } from '../services/users-data.service';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -12,10 +14,18 @@ export class SignUpComponent {
     email: new FormControl(''),
     password: new FormControl(''),
     repeatPassword: new FormControl(''),
-    check: new FormControl('false'),
   });
+  users:any;
   submitted = false;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder, 
+    private userData: UsersDataService
+    )
+    { 
+    this.userData.users().subscribe((data) => {
+      this.users = data;
+    });
+  }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(
@@ -28,9 +38,8 @@ export class SignUpComponent {
             Validators.minLength(6),
             Validators.pattern('^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$'),
           ]
-        ],
+       ],
         repeatPassword: ['', Validators.required],
-        check: [false, Validators.requiredTrue],
 
       },
       {
@@ -42,14 +51,23 @@ export class SignUpComponent {
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
+  resertForm(){
+    this.form.reset();
+  }
 
-  onSubmit() : void {
+  onSubmit( data: any) : void {
+
+    console.warn(data);
+    this.userData.saveUser(data).subscribe((result) =>{
+      console.warn(result);
+    })
     this.submitted = true;
 
     if (this.form.invalid) {
+      console.log('Disable SignUp')
       return;
     }
 
-    console.log(JSON.stringify(this.form.value, null, 2));
+    console.log(this.form.value);
   }
 }
