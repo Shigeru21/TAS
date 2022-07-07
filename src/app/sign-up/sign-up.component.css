@@ -1,98 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=Patua+One&family=Yeseva+One&display=swap');
-.card {
-    width: 550px;
-    height: 500px;
-    border: 5px solic #000;
-    border: none;
-    border-radius: 10px;
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
-.card-header {
-    background: #fff;
-}
-
-.card-header h1 {
-    color: black;
-    font-weight: 400;
-    font-size: 28px;
-    font-family: 'Patua One', cursive;
-}
-
-.card-header h6 {
-    color: black;
-    font-weight: 200;
-    font-size: 16px;
-    font-family: 'Patua One', cursive;
-}
-
-.form-group label {
-    color: black;
-    font-weight: 200;
-    font-size: 18px;
-    font-family: 'Patua One', cursive;
-}
-
-.form-group input {
-    width: 500px;
-    height: 40px;
-    font-weight: 200;
-    font-size: 16px;
-    font-family: 'Patua One', cursive;
-    border-radius: 6px;
-    background: rgb(215, 208, 208);
-    border: 10px solic #000;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.check {
+.main {
+    position: fixed;
+    background: url(../../assets/b18f6a7c829f41c1188e.jpg);
+    background-size: 100% 100%;
+    min-height: 100vh;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     display: flex;
-    margin-top: 5px;
+    justify-content: center;
 }
 
-.check input {
-    width: 20px;
-    height: 20px;
+.form {
+    width: 450px;
+    min-height: 100px;
+    padding: 32px 24px;
+    text-align: left;
+    background: #fff;
+    border-radius: 2px;
+    margin: 24px;
+    align-self: center;
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
 }
 
-.check label {
-    padding-left: 12px;
-    color: black;
-    font-weight: 200;
-    font-size: 16px;
-    font-family: 'Patua One', cursive;
+.form .heading {
+    font-size: 2rem;
+    color: #000;
+    font-weight: 500;
 }
 
-h6 {
-    color: black;
-    font-weight: 200;
-    font-size: 16px;
-    font-family: 'Patua One', cursive;
-    margin-top: 5px;
+.form .desc {
+    text-align: left;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: lighter;
+    line-height: 2.4rem;
+    margin-top: 16px;
+    font-weight: 500;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+}
+
+.form-label {
+    text-align: left;
+}
+
+.form-label {
+    font-weight: 700;
+    padding-bottom: 8px;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+}
+
+.form-check-label {
+    font-weight: 500;
+    margin: auto;
+    margin-top: 1px;
+    padding-left: 8px;
+    padding-bottom: 6px;
+    line-height: 1.8rem;
+    font-size: 1.5rem;
+}
+
+.form-check-input {
+    width: 15px;
+    height: 15px;
+}
+
+.form-control {
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #1d9cbf;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+.form-control:hover {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
 }
 
 .button {
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
 }
 
-.btn-cancle {
-    width: 250px;
+.form-submit,
+.form-resert {
+    outline: none;
+    font-weight: 600;
     height: 40px;
-    border-radius: 5px;
+    width: 200px;
     color: #fff;
-    font-family: 'Patua One', cursive;
-    background: red;
     border: none;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
 }
 
-.btn-sign {
-    width: 250px;
-    height: 40px;
-    border-radius: 5px;
-    color: #fff;
-    font-family: 'Patua One', cursive;
-    background: green;
-    border: none;
+.form-resert {
+    background-color: #f3441d;
+}
+
+.form-resert:hover {
+    background-color: #f3441d;
+}
+
+.form-submit {
+    background-color: #1ee951;
+}
+
+.form-submit:hover {
+    background-color: #1ee951;
+}
+
+.spacer {
+    margin-top: 36px;
+}
+
+.text-danger {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
 }
